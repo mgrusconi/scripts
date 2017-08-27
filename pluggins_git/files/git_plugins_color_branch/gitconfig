@@ -1,0 +1,35 @@
+[color]
+          ui = auto
+
+[color "branch"]
+          current = yellow reverse
+          local = yellow
+          remote = yellow
+
+[color "diff"]
+          meta = yellow bold
+          frag = magenta bold
+          old = red bold
+          new = green bold
+
+[color "status"]
+         added = green
+         changed = red
+         untracked = cyan
+
+[alias]
+        unstage = reset HEAD
+        st = status
+        rma = ls-files --deleted | xargs git rm
+        co = checkout
+        com = checkout master
+        lg = log -p
+        ci = commit
+        di = diff
+
+[core]
+        editor=vim
+        pager=less
+[user]
+        email = 
+        name = 

@@ -1,0 +1,14 @@
+
+# git-related functions in here
+git_branch () {
+  GIT_BRANCH="$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')"
+  if [[ -n "$GIT_BRANCH" ]] ; then
+    echo "[$GIT_BRANCH]"
+  fi
+}
+# bash prompt
+prompt () {
+ PS1='\u@\h:\w\[\033[0;36m\]$(git_branch)\[\033[0m\]$ '
+}
+PROMPT_COMMAND=prompt
+export PROMPT_COMMAND
