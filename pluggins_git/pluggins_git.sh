@@ -3,7 +3,7 @@
 #
 
 DIRECTORIO=$(pwd)
-USUARIO=$(whoami)
+USUARIO=$(sudo -u root echo `whoami`)
 
 function_test() {
 	if [ ! -e /etc ]
@@ -26,7 +26,7 @@ function_git_plugins_color_branch() {
 	wait 
 	sleep 2
 	echo 'Agregando las configuraciones para los branches de GIT'
-	sudo cat $DIRECTORIO/files/git_plugins_color_branch/bashrc >> /home/intranet.biblostravel.com/$USUARIO/.bashrc
+	sudo cat $DIRECTORIO/files/git_plugins_color_branch/bashrc >> /home/marcelo/.bashrc
 	wait 
 	sleep 2
 	echo "Proceso finalizado, reinicie la terminal"
